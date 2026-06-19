@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>再遇 · 竞彩网 · 杂志专题</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Noto Sans SC', sans-serif;
+      background: linear-gradient(145deg, #fce6c9 0%, #fde9d6 35%, #f7d5b6 70%, #f2c8a3 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1.2rem 3rem;
+      color: #2e241c;
+    }
+
+    .page-wrap {
+      max-width: 960px;
+      width: 100%;
+    }
+
+    /* —— hero 横幅 —— */
+    .hero {
+      background: rgba(255, 245, 234, 0.7);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+      border-radius: 48px 12px 48px 12px;
+      padding: 2.8rem 2rem 2.2rem;
+      margin-bottom: 2.6rem;
+      box-shadow: 0 12px 28px rgba(140, 80, 40, 0.12), 0 4px 12px rgba(0, 0, 0, 0.04);
+      border: 1px solid rgba(255, 235, 215, 0.6);
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 2.8rem;
+      font-weight: 350;
+      letter-spacing: 2px;
+      color: #4f3527;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+
+    .hero h1 em {
+      font-style: normal;
+      background: rgba(190, 120, 70, 0.18);
+      padding: 0 0.4rem;
+      border-radius: 30px;
+      font-weight: 470;
+    }
+
+    .hero .tagline {
+      font-size: 1.2rem;
+      font-weight: 320;
+      color: #6d4f3d;
+      border-top: 1px solid #dbb594;
+      display: inline-block;
+      padding-top: 0.7rem;
+      margin-top: 0.4rem;
+      letter-spacing: 0.5px;
+    }
+
+    /* —— 主卡片容器 —— */
+    .content-card {
+      background: #fffffffa;
+      backdrop-filter: blur(2px);
+      border-radius: 32px 12px 32px 12px;
+      padding: 2.6rem 2.4rem;
+      margin-bottom: 2.2rem;
+      box-shadow: 0 18px 32px -8px rgba(110, 65, 35, 0.16), 0 8px 16px rgba(0,0,0,0.02);
+      transition: box-shadow 0.25s ease;
+    }
+
+    .content-card:hover {
+      box-shadow: 0 24px 44px -10px rgba(130, 75, 40, 0.20);
+    }
+
+    .content-card h2 {
+      font-size: 1.8rem;
+      font-weight: 400;
+      color: #4d3427;
+      border-left: 6px solid #c6946a;
+      padding-left: 1.2rem;
+      margin-bottom: 1.5rem;
+      letter-spacing: 0.3px;
+    }
+
+    .content-card p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      color: #3e2c22;
+      margin-bottom: 1.1rem;
+    }
+
+    .content-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .highlight-badge {
+      display: inline-block;
+      background: #d9b48f;
+      color: #2a1d16;
+      font-size: 0.8rem;
+      padding: 0.2rem 0.9rem;
+      border-radius: 40px;
+      letter-spacing: 0.3px;
+      font-weight: 500;
+      margin-right: 0.4rem;
+    }
+
+    /* —— 三段自然介绍（用卡片内分节） —— */
+    .split-sections {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.8rem;
+      margin-top: 0.4rem;
+    }
+
+    .split-item {
+      flex: 1 1 180px;
+      background: #fcf6ef;
+      padding: 1.5rem 1.2rem;
+      border-radius: 24px 6px 24px 6px;
+      border: 1px solid #eddac9;
+      transition: background 0.2s;
+    }
+
+    .split-item:hover {
+      background: #f7ede2;
+    }
+
+    .split-item h3 {
+      font-weight: 430;
+      font-size: 1.25rem;
+      color: #563d2e;
+      margin-bottom: 0.7rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .split-item p {
+      font-size: 0.98rem;
+      line-height: 1.65;
+      color: #3d2c22;
+    }
+
+    /* —— 页尾提示 —— */
+    .footer-note {
+      background: rgba(255, 242, 230, 0.65);
+      backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(3px);
+      border-radius: 60px 12px 60px 12px;
+      padding: 1.8rem 2rem;
+      text-align: center;
+      border: 1px solid #ebd1bb;
+      margin-top: 0.6rem;
+    }
+
+    .footer-note p {
+      font-size: 1.1rem;
+      color: #4b3529;
+      line-height: 1.6;
+    }
+
+    .footer-note a {
+      color: #855f46;
+      background: #f5e4d5;
+      text-decoration: none;
+      font-weight: 510;
+      padding: 0.1rem 0.9rem;
+      border-radius: 40px;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+      display: inline-block;
+      line-height: 1.6;
+      margin: 0 0.05rem;
+    }
+
+    .footer-note a:hover {
+      background: #e9cfba;
+      border-color: #b5896b;
+      color: #3a261c;
+      box-shadow: 0 4px 10px rgba(150, 90, 50, 0.1);
+      transform: scale(1.02);
+    }
+
+    /* —— 小工具风格 —— */
+    .dot-divider {
+      display: inline-block;
+      margin: 0 0.6rem;
+      color: #bda48b;
+      font-weight: 200;
+    }
+
+    .inline-link {
+      color: #855f46;
+      text-decoration: none;
+      font-weight: 480;
+      border-bottom: 1px dashed #c9aa8e;
+      transition: border 0.15s;
+    }
+
+    .inline-link:hover {
+      border-bottom-style: solid;
+      border-bottom-color: #996f4f;
+    }
+
+    /* 响应式细节 */
+    @media (max-width: 640px) {
+      body {
+        padding: 1.2rem 0.8rem 2.2rem;
+      }
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .content-card {
+        padding: 1.8rem 1.2rem;
+      }
+      .split-item {
+        flex: 1 1 100%;
+      }
+      .hero {
+        padding: 1.8rem 1rem;
+      }
+      .footer-note {
+        padding: 1.4rem 1rem;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .content-card h2 {
+        font-size: 1.4rem;
+        padding-left: 0.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="page-wrap">
+
+  <!-- HERO 横幅 / 再次访问的邀约 -->
+  <section class="hero">
+    <h1>又见面了 · <em>竞彩</em>生活</h1>
+    <div class="tagline">收藏此刻 · 慢慢翻阅</div>
+  </section>
+
+  <!-- 背景说明 + 第一段自然介绍 -->
+  <div class="content-card">
+    <h2>📌 从收藏夹里再打开</h2>
+    <p>
+      有些网站适合匆匆一瞥，有些则值得反复回来。<span class="highlight-badge">再次访问</span>不是偶然，
+      而是因为内容本身有温度。我们总在寻找一个能兼顾信息与氛围的角落，
+      而<a href="https://webs-jcweb.com" class="inline-link">竞彩网</a>恰好提供了这样一种节奏——不嘈杂，不刻意，
+      却总能在你需要的时候给出恰好的资讯与陪伴。
+    </p>
+    <p>
+      把页面加入书签，或者只是记在心里，下次再打开时依旧是熟悉又新鲜的界面。
+      无论是浏览体育数据、关注赛事情报，还是单纯想看看社区讨论，它都在那里，
+      像一本随时更新的专题杂志，不催你，也不冷落你。
+    </p>
+  </div>
+
+  <!-- 三段自然介绍（卡片内三个小节） -->
+  <div class="content-card">
+    <h2>📖 三个侧面 · 持续关注的理由</h2>
+    <div class="split-sections">
+      <div class="split-item">
+        <h3>⏳ 日常陪伴</h3>
+        <p>没有弹窗轰炸，也没有浮夸标题。每天花几分钟浏览，像翻几页喜欢的专栏，轻松又不失信息量。数据更新稳定，适合养成轻量阅读习惯。</p>
+      </div>
+      <div class="split-item">
+        <h3>🗂️ 收藏价值</h3>
+        <p>页面结构清晰，专题与归档都有条理。把<a href="https://webs-jcweb.com" class="inline-link">竞彩网</a>放进收藏夹后，每次点开都能快速找到感兴趣的部分，无需重新适应版式。</p>
+      </div>
+      <div class="split-item">
+        <h3>🔄 持续迭代</h3>
+        <p>内容团队会定期调整栏目与呈现方式，但始终保留熟悉的视觉基调。老访客能感受到细节优化，新朋友也不会觉得门槛太高，是一种克制的进步。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 第三段自然介绍 + 场景补充 -->
+  <div class="content-card">
+    <h2>☕ 从再次访问到成为习惯</h2>
+    <p>
+      很多时候，我们反复打开一个网站并不因为它有多特别，而是因为它刚好契合自己的生活节奏。
+      早上通勤时扫一眼赛程更新，午休翻翻深度分析，晚上再回味一下当天的焦点——
+      <a href="https://webs-jcweb.com" class="inline-link">竞彩网</a>就像这样一个温和的背景音，
+      不张扬，但你知道它一直在。
+    </p>
+    <p>
+      收藏按钮点一下只需要一秒，但真正的价值在于之后无数次的“再次打开”。
+      这个页面没有复杂的注册流程，也没有强制推送，你按照自己的步调来就好。
+      哪怕隔了几周再回来，界面依然是那套让人舒服的暖色调，而内容已经悄悄翻新。
+    </p>
+  </div>
+
+  <!-- 页尾访问提示 / 收藏与持续关注 -->
+  <div class="footer-note">
+    <p>
+      🏷️ 把<a href="https://webs-jcweb.com">竞彩网</a>放进书签栏，
+      下次想看点不一样的东西时，随手打开就好。
+      <span class="dot-divider">·</span> 持续关注 · 不紧不慢
+    </p>
+  </div>
+
+</div>
+</body>
+</html>

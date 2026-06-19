@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://nuitboyenazobug.github.io/webs-jcweb-com/sitemap.xml
